@@ -1,0 +1,31 @@
+[user]
+	email = aureliarsaber@gmail.com
+	name = Aurelia Saber
+
+[push]
+	autoSetupRemote = true
+
+[alias]
+	last = log -1 HEAD
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	sync = fetch --all -Pp
+
+[core]
+	editor = nvim
+
+[rebase]
+	updateRefs = true
+
+[core]
+    	pager = delta
+
+[include]
+	path = /home/aurelia/.config/delta/themes/macchiato.gitconfig
+
+[delta]
+	features = catppuccin-macchiato
+	side-by-side = true
