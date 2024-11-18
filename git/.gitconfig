@@ -24,7 +24,7 @@
     	pager = delta
 
 [include]
-	path = /home/aurelia/.config/delta/themes/macchiato.gitconfig
+	path = /home/aurelia/.config/delta/themes/catppuccin.gitconfig
 
 [delta]
 	features = catppuccin-macchiato
