@@ -1,0 +1,28 @@
+general.import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[font]
+normal.family = "Iosevka NF"
+size = 11.0
+
+[window]
+padding.x = 8
+padding.y = 8
+decorations = "none"
+opacity = 0.5
+blur = true
+startup_mode = "maximized"
+
+[colors]
+transparent_background_colors = false
+
+[cursor]
+style.shape = "beam"
+
+[mouse]
+hide_when_typing = true
