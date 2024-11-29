@@ -11,3 +11,5 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+
+eval "$(keychain --eval --quiet id_ed25519)"

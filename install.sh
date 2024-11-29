@@ -1,5 +1,5 @@
 # Install packages
-yay -S zsh zsh-completions git tmux atuin bat git-delta alacritty ttf-iosevka-nerd fzf fd eza neovim wl-clipboard lesspipe
+yay -S zsh zsh-completions git tmux atuin bat git-delta alacritty ttf-iosevka-nerd fzf fd eza neovim wl-clipboard lesspipe keychain
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 

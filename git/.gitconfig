@@ -29,3 +29,6 @@
 [delta]
 	features = catppuccin-macchiato
 	side-by-side = true
+
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
