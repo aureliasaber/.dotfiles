@@ -1,43 +1,17 @@
-# install nix
-sh <(curl -L https://nixos.org/nix/install) --daemon
+# Install packages
+yay -S zsh zsh-completions git tmux atuin bat git-delta alacritty ttf-iosevka-nerd fzf fd eza neovim wl-clipboard lesspipe
 
-sudo systemctl start nix-daemon.service
-usermod -aG nix-users $USER
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# source nix
-. ~/.nix-profile/etc/profile.d/nix.sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
-# install packages
-nix-env -iA \
-	nixpkgs.zsh \
-	nixpkgs.antibody \
-	nixpkgs.git \
-	nixpkgs.neovim \
-	nixpkgs.tmux \
-	nixpkgs.stow \
-	nixpkgs.fzf \
-	nixpkgs.ripgrep \
-	nixpkgs.bat \
-    nixpkgs.delta \
-    nixpkgs.atuin
+git clone https://github.com/Freed-Wu/fzf-tab-source.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab-source
 
 # stow dotfiles
-stow git
-stow nvim
-stow tmux
-stow zsh
-
-# add zsh as a login shell
-command -v zsh | sudo tee -a /etc/shells
+for i in $(fd -t d --format '{/}'); do
+	stow "$i"
+done
 
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
-
-# bundle zsh plugins 
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-
-# install neovim plugins
-nvim --headless +PlugInstall +qall
-
-# Use kitty terminal on MacOS
-[ `uname -s` = 'Darwin' ] && stow kitty
