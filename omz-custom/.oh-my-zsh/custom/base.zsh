@@ -1,3 +1,6 @@
+# Disable beeping in shell
+setopt NOBEEP
+
 # Define path to lesspipe
 export LESSOPEN="| /usr/local/bin/lesspipe.sh %s"
 
